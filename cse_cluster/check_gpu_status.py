@@ -32,6 +32,6 @@ for name in gpu_clients:
     f.write(get_gpu_info_bash(name))
     f.close()
     out = check_output(['qsub', '-q', 'all.q', 'gpu_status_temp.sh'])
-    print(out)
+    out = str(out)
     print(pattern.findall(out)[0])
 os.remove("gpu_status_temp.sh")
