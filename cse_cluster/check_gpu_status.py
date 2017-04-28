@@ -5,20 +5,21 @@ import re
 gpu_clients = ["client108", "client109", "client110", "client111", "client112",
                "client113", "client114"]
 
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 def get_gpu_info_bash(client_name):
     str =\
 r"""#!/bin/csh
 # specify where the output file should be put
-#$ -o ./
-#$ -e ./
+#$ -o {}
+#$ -e {}
 
 # specify the working path
-#$ -wd ./
+#$ -wd {}
 
 #$ -l h={}
 #$ -N gpu_info
 
-/usr/bin/nvidia-smi""".format(client_name)
+/usr/bin/nvidia-smi""".format(CURRENT_DIR, CURRENT_DIR, CURRENT_DIR, client_name)
     return str
 
 info_str = ""
