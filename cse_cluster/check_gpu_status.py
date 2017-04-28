@@ -42,10 +42,11 @@ for name, id in zip(gpu_clients, job_ids):
     error_filename = "gpu_info.e{}".format(id)
     while not os.path.exists(output_filename):
         time.sleep(1)
-    info_str += "# GPU Info {}\n".format(name)
+    info_str += "# GPU Info {}\n\n".format(name)
     f = open(output_filename, 'r')
     info_str += "".join(f.readlines()[2:])
     f.close()
+    info_str += "\n"
     os.remove(output_filename)
     os.remove(error_filename)
 f = open("gpu_info.md", 'w')
