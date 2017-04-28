@@ -19,7 +19,7 @@ r"""#!/bin/csh
 #$ -l h={}
 #$ -N gpu_info
 
-./usr/bin/nvidia-smi
+/usr/bin/nvidia-smi
 sleep 2s""".format(CURRENT_DIR, CURRENT_DIR, CURRENT_DIR, client_name)
     return str
 
