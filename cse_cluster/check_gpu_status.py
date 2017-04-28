@@ -26,7 +26,7 @@ info_str = ""
 regex = "Your job (\d+)"
 pattern = re.compile(regex)
 for name in gpu_clients:
-    info_str += "GPU Info {}".format(name)
+    info_str += "# GPU Info {}".format(name)
     print("Submitting the job for", get_gpu_info_bash(name))
     f = open("gpu_status_temp.sh", "w")
     f.write(get_gpu_info_bash(name))
