@@ -48,6 +48,6 @@ for name, id in zip(gpu_clients, job_ids):
     f.close()
     os.remove(output_filename)
     os.remove(error_filename)
-f = open("gpu_info.md")
+f = open("gpu_info.md", 'w')
 f.write(info_str)
 f.close()
