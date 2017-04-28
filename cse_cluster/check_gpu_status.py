@@ -30,7 +30,7 @@ for name in gpu_clients:
     print("Submitting the job for", get_gpu_info_bash(name))
     f = open("gpu_status_temp.sh", "w")
     f.write(get_gpu_info_bash(name))
-    out = check_output(['qsub', '-q', 'all.q', 'gpu_status_temp.sh'])
+    out = check_output(['qsub', '-q', 'all.q', './gpu_status_temp.sh'])
     print(pattern.findall(out)[0])
     f.close()
 os.remove("gpu_status_temp.sh")
