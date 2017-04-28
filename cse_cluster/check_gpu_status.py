@@ -44,7 +44,9 @@ for name, id in zip(gpu_clients, job_ids):
         time.sleep(1)
     info_str += "# GPU Info {}\n\n".format(name)
     f = open(output_filename, 'r')
+    info_str += "```"
     info_str += "".join(f.readlines()[2:])
+    info_str += "```"
     f.close()
     info_str += "\n"
     os.remove(output_filename)
