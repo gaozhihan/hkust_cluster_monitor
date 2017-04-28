@@ -18,8 +18,7 @@ r"""#!/bin/csh
 #$ -l h={}
 #$ -N gpu_info
 
-setenv PATH "/usr/local/cuda-8.0/bin:$PATH"
-nvidia-smi""".format(client_name)
+/usr/bin/nvidia-smi""".format(client_name)
     return str
 
 info_str = ""
